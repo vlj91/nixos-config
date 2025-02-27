@@ -254,6 +254,7 @@
                       "enableLanguageServer" = true;
                       "serverPath" = "nixd";
                     };
+                    "telemetry.telemetryLevel" = "off";
                     "terminal" = {
                       "integrated" = {
                         "copyOnSelection" = true;

@@ -122,11 +122,14 @@
             enable = true;
             onActivation.cleanup = "uninstall";
             taps = [ ];
-            brews = [ ];
+            brews = [
+              "batt"
+            ];
             casks = [
               "1Password" # Must be install in /Applications, so cannot use nixpkgs
               "logi-options+"
               "Stremio"
+              "teamviewer"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
@@ -172,6 +175,7 @@
             packages = with pkgs; [
               _1password-cli
               alacritty
+              asdf-vm
               colima
               docker-buildx
               docker-client
@@ -188,6 +192,7 @@
               ripgrep
               stats
               tart
+              windsurf
               zoom-us
             ];
             stateVersion = "25.05";
@@ -195,6 +200,9 @@
               ".config/nvim" = {
                 source = ./config/nvim;
                 recursive = true;
+              };
+              "Library/Application\ Support/iTerm2/DynamicProfiles/mine.json" = {
+                source = ./config/iterm2/mine.json;
               };
             };
             shell.enableZshIntegration = true;
@@ -217,10 +225,24 @@
             direnv.enable = true;
             git = {
               enable = true;
+              extraConfig = {
+                gpg = {
+                  format = "ssh";
+                  ssh = {
+                    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+                  };
+                };
+                commit = {
+                  gpgsign = true;
+                };
+              };
               diff-so-fancy = {
                 enable = true;
                 changeHunkIndicators = true;
                 markEmptyLines = true;
+              };
+              signing = {
+                key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK+VGSqIP96us62MMoKVsyAXOA/LVFnWOTJWjLqAU3Le";
               };
               userEmail = "5386965+greg-cook@users.noreply.github.com";
               userName = "Greg Cook";
@@ -290,6 +312,19 @@
             };
             zsh = {
               enable = true;
+              oh-my-zsh = {
+                enable = true;
+                plugins = [
+                  # "asdf"
+                  "docker"
+                  "git"
+                  "kubectl"
+                ];
+                theme = "robbyrussell";
+              };
+              initExtra = ''
+                . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+              '';
               shellAliases = {
                 lg = "lazygit";
                 switch = "darwin-rebuild switch --flake ~/code/greg-cook/notfiles";

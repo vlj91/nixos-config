@@ -186,7 +186,6 @@
               google-chrome
               ice-bar
               iterm2
-              lazygit
               luarocks
               rectangle
               ripgrep
@@ -197,10 +196,18 @@
             ];
             stateVersion = "25.05";
             file = {
+              ".config/alacritty" = {
+                source = ./config/alacritty;
+                recursive = true;
+              };
               ".config/nvim" = {
                 source = ./config/nvim;
                 recursive = true;
               };
+              ".hushlogin" = {
+                    text = '' null '';
+                    executable = false;
+                };
               "Library/Application\ Support/iTerm2/DynamicProfiles/mine.json" = {
                 source = ./config/iterm2/mine.json;
               };
@@ -222,7 +229,13 @@
             };
           };
           programs = {
+            bat.enable = true;
             direnv.enable = true;
+            eza = {
+              enable = true;
+              enableZshIntegration = true;
+              icons = "auto";
+            };
             git = {
               enable = true;
               extraConfig = {
@@ -248,6 +261,7 @@
               userName = "Greg Cook";
             };
             home-manager.enable = true;
+            lazygit.enable = true;
             neovim = {
               enable = true;
               coc.enable = true;
@@ -326,6 +340,7 @@
                 . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
               '';
               shellAliases = {
+                cat = "bat";
                 lg = "lazygit";
                 switch = "darwin-rebuild switch --flake ~/code/greg-cook/notfiles";
                 watch = "watch ";

@@ -185,7 +185,6 @@
               gh
               google-chrome
               ice-bar
-              iterm2
               luarocks
               rectangle
               ripgrep
@@ -207,9 +206,6 @@
               ".hushlogin" = {
                 text = ''null '';
                 executable = false;
-              };
-              "Library/Application\ Support/iTerm2/DynamicProfiles/mine.json" = {
-                source = ./config/iterm2/mine.json;
               };
             };
             shell.enableZshIntegration = true;

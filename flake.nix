@@ -205,9 +205,9 @@
                 recursive = true;
               };
               ".hushlogin" = {
-                    text = '' null '';
-                    executable = false;
-                };
+                text = ''null '';
+                executable = false;
+              };
               "Library/Application\ Support/iTerm2/DynamicProfiles/mine.json" = {
                 source = ./config/iterm2/mine.json;
               };

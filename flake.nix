@@ -139,7 +139,10 @@
             };
           };
 
-          fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+          fonts.packages = with pkgs.nerd-fonts; [
+            jetbrains-mono
+            meslo-lg
+          ];
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
@@ -296,8 +299,6 @@
                     "window.autoDetectColorScheme" = true;
                     "workbench" = {
                       "colorTheme" = "Tokyo Night";
-                      "preferredDarkColorTheme" = "Tokyo Night";
-                      "preferredLightColorTheme" = "Tokyo Night Light";
                       "startupEditor" = "none";
                       "welcomePage.walkthroughs.openOnInstall" = false;
                     };
@@ -320,6 +321,11 @@
                 };
               };
             };
+            z-lua = {
+              enable = true;
+              enableAliases = true;
+              enableZshIntegration = true;
+            };
             zsh = {
               enable = true;
               oh-my-zsh = {
@@ -334,6 +340,22 @@
               };
               initExtra = ''
                 . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+                # <<<<< Enable natural text editing
+                #
+                # Move to the beginning of the line. `Cmd + Left Arrow`:
+                bindkey "^[[1;9D" beginning-of-line
+                # Move to the end of the line. `Cmd + Right Arrow`:
+                bindkey "^[[1;9C" end-of-line
+                # Move to the beginning of the previous word. `Option + Left Arrow`:
+                bindkey "^[[1;3D" backward-word
+                # Move to the beginning of the next word. `Option + Right Arrow`:
+                bindkey "^[[1;3C" forward-word
+                # Delete the word behind the cursor. `Option + Delete`:
+                bindkey "^[[3;10~" backward-kill-word
+                # Delete the word after the cursor. `Option + fn + Delete`:
+                bindkey "^[[3;3~" kill-word
+                #
+                # Enable natural text editing >>>>>
               '';
               shellAliases = {
                 cat = "bat";

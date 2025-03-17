@@ -133,6 +133,7 @@
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
+              "Kindle" = 302584613;
               "Microsoft Word" = 462054704;
               "Microsoft Excel" = 462058435;
               "Parcel" = 639968404;
@@ -179,6 +180,7 @@
               _1password-cli
               alacritty
               asdf-vm
+              cargo
               colima
               docker-buildx
               docker-client
@@ -198,6 +200,10 @@
             ];
             stateVersion = "25.05";
             file = {
+              ".asdfrc" = {
+                text = ''legacy_version_file = yes'';
+                executable = false;
+              };
               ".config/alacritty" = {
                 source = ./config/alacritty;
                 recursive = true;
@@ -228,8 +234,12 @@
             };
           };
           programs = {
+            awscli.enable = true;
             bat.enable = true;
-            direnv.enable = true;
+            direnv = {
+              enable = true;
+              enableZshIntegration = true;
+            };
             eza = {
               enable = true;
               enableZshIntegration = true;
@@ -279,7 +289,7 @@
                 default = {
                   userSettings = {
                     "editor" = {
-                      "fontFamily" = "JetBrainsMono Nerd Font Mono";
+                      "fontFamily" = "MesloLGS Nerd Font Mono";
                       "fontLigatures" = true;
                       "fontSize" = 13;
                       "formatOnSave" = true;
@@ -296,7 +306,7 @@
                         "fontLigatures.enabled" = true;
                       };
                     };
-                    "window.autoDetectColorScheme" = true;
+                    "window.autoDetectColorScheme" = false;
                     "workbench" = {
                       "colorTheme" = "Tokyo Night";
                       "startupEditor" = "none";
@@ -314,6 +324,7 @@
                   extensions = with pkgs.vscode-marketplace; [
                     dnicolson.binary-plist
                     enkia.tokyo-night
+                    hashicorp.terraform
                     jnoortheen.nix-ide
                     ms-python.python
                     shopify.ruby-extensions-pack
@@ -335,6 +346,7 @@
                   "docker"
                   "git"
                   "kubectl"
+                  "terraform"
                 ];
                 theme = "robbyrussell";
               };

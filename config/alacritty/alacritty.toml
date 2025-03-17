@@ -5,6 +5,7 @@ import = ["tokyonight_night.toml"]
 [font]
 # normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
 normal = { family = "MesloLGS Nerd Font Mono", style = "Regular" }
+size = 13.0
 
 [selection]
 save_to_clipboard = true

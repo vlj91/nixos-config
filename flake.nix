@@ -127,9 +127,12 @@
             ];
             casks = [
               "1Password" # Must be install in /Applications, so cannot use nixpkgs
-              "logi-options+"
               "Stremio"
+              "docker"
+              "logi-options+"
+              "steam"
               "teamviewer"
+              "whisky"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
@@ -180,8 +183,10 @@
               _1password-cli
               alacritty
               asdf-vm
+              aws-vault
               cargo
               colima
+              discord
               docker-buildx
               docker-client
               docker-compose
@@ -257,6 +262,9 @@
                 commit = {
                   gpgsign = true;
                 };
+                init = {
+                  defaultBranch = "main";
+                };
               };
               diff-so-fancy = {
                 enable = true;
@@ -324,6 +332,7 @@
                   extensions = with pkgs.vscode-marketplace; [
                     dnicolson.binary-plist
                     enkia.tokyo-night
+                    golang.go
                     hashicorp.terraform
                     jnoortheen.nix-ide
                     ms-python.python
@@ -387,6 +396,9 @@
                 "ignoreAllDups" = true;
                 "ignoreSpace" = true;
                 "share" = true;
+              };
+              sessionVariables = {
+                "ASDF_GOLANG_MOD_VERSION_ENABLED" = true;
               };
             };
           };

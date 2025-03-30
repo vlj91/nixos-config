@@ -335,7 +335,9 @@
                     golang.go
                     hashicorp.terraform
                     jnoortheen.nix-ide
+                    ms-azuretools.vscode-docker
                     ms-python.python
+                    ms-vscode-remote.remote-ssh
                     shopify.ruby-extensions-pack
                   ];
                 };

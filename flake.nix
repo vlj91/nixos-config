@@ -130,9 +130,12 @@
               "Stremio"
               "docker"
               "logi-options+"
+              "parsec"
               "steam"
+              "surfshark"
               "teamviewer"
               "whisky"
+              "wifiman"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
@@ -194,12 +197,16 @@
               fzf
               gh
               google-chrome
+              hey
               ice-bar
               luarocks
               rectangle
               ripgrep
               stats
               tart
+              wakeonlan
+              watch
+              wget
               windsurf
               zoom-us
             ];
@@ -281,7 +288,8 @@
             lazygit.enable = true;
             neovim = {
               enable = true;
-              coc.enable = true;
+              # This is not working for some reason
+              # coc.enable = true;
               defaultEditor = true;
               viAlias = true;
               vimAlias = true;

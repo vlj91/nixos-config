@@ -118,22 +118,12 @@
             ];
             casks = [
               "1Password" # Must be install in /Applications, so cannot use nixpkgs
-              "Stremio"
               "docker"
               "logi-options+"
-              "parsec"
               "steam"
-              "surfshark"
-              "teamviewer"
-              "whisky"
-              "wifiman"
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
-              "Kindle" = 302584613;
-              "Microsoft Word" = 462054704;
-              "Microsoft Excel" = 462058435;
-              "Parcel" = 639968404;
             };
           };
 

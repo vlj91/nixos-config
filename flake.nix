@@ -168,9 +168,9 @@
           nixpkgs.hostPlatform = "aarch64-darwin";
           nixpkgs.config.allowBroken = true;
           # Declare the user that will be running `nix-darwin`.
-          users.users.gc = {
-            name = "gc";
-            home = "/Users/gc";
+          users.users.vaughan = {
+            name = "vaughan";
+            home = "/Users/vaughan";
           };
           security.pam.services.sudo_local.touchIdAuth = true;
           nixpkgs.config.allowUnfree = true;
@@ -427,7 +427,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               verbose = true;
-              users.gc = homeconfig;
+              users.vaughan = homeconfig;
               sharedModules = [
                 mac-app-util.homeManagerModules.default
               ];
@@ -437,7 +437,7 @@
           {
             nix-homebrew = {
               enable = true;
-              user = "gc";
+              user = "vaughan";
             };
           }
         ];

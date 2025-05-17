@@ -265,10 +265,10 @@
                 markEmptyLines = true;
               };
               signing = {
-                key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK+VGSqIP96us62MMoKVsyAXOA/LVFnWOTJWjLqAU3Le";
+                key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMF03KsIsv7G+eLBfvodKBJVIbWY0HU/AdTH9fMpbm6/";
               };
-              userEmail = "5386965+greg-cook@users.noreply.github.com";
-              userName = "Greg Cook";
+              userEmail = "10548294+vlj91@users.noreply.github.com";
+              userName = "Vaughan Jones";
             };
             home-manager.enable = true;
             lazygit.enable = true;

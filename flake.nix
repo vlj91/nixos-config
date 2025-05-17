@@ -206,10 +206,6 @@
                 text = ''legacy_version_file = yes'';
                 executable = false;
               };
-              ".config/alacritty" = {
-                source = ./config/alacritty;
-                recursive = true;
-              };
               ".config/nvim" = {
                 source = ./config/nvim;
                 recursive = true;

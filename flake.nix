@@ -103,7 +103,7 @@
           };
           system.keyboard = {
             enableKeyMapping = true;
-            remapCapsLockToControl = true;
+            remapCapsLockToControl = false;
           };
           networking = {
             computerName = "mba";

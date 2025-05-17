@@ -142,6 +142,7 @@
               "k6"
               "lazygit"
               "libpq"
+              "mas"
               "neovim"
               "newman"
               "pipenv"
@@ -192,6 +193,7 @@
             ];
             masApps = {
               "1Password for Safari" = 1569813296;
+              "Magnet" = 441258766;
             };
           };
 
@@ -236,7 +238,6 @@
               asdf-vm
               aws-vault
               cargo
-              colima
               discord
               docker-buildx
               docker-client
@@ -251,11 +252,9 @@
               rectangle
               ripgrep
               stats
-              tart
               wakeonlan
               watch
               wget
-              windsurf
               zoom-us
             ];
             stateVersion = "25.05";

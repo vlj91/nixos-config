@@ -114,7 +114,7 @@
             onActivation.cleanup = "uninstall";
             taps = [
               "apple/apple"
-              "asdf"
+              "epk/epk"
               "felixkratz/formulae"
               "nikitabobko/tap"
             ];
@@ -351,7 +351,7 @@
               oh-my-zsh = {
                 enable = true;
                 plugins = [
-                  # "asdf"
+                  "asdf"
                   "docker"
                   "git"
                   "kubectl"

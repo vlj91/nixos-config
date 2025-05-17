@@ -59,13 +59,6 @@
                 "NSStatusItemSpacing" = 6;
                 "NSStatusItemSelectionPadding" = 6;
               };
-              "com.knollsoft.Rectangle" = {
-                "allowAnyShortcut" = 1;
-                "alternateDefaultShortcuts" = 1;
-                "launchOnLogin" = 1;
-                "subsequentExecutionMode" = 0;
-                "selectedCycleSizes" = 31;
-              };
             };
             SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
             WindowManager.GloballyEnabled = false;

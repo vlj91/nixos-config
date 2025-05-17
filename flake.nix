@@ -40,6 +40,7 @@
               ApplePressAndHoldEnabled = false;
               AppleShowAllExtensions = true;
               AppleShowScrollBars = "WhenScrolling";
+              _HIHideMenuBar = true;
               NSAutomaticCapitalizationEnabled = false;
               NSAutomaticInlinePredictionEnabled = false;
               NSAutomaticDashSubstitutionEnabled = false;

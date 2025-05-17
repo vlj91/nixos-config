@@ -371,6 +371,7 @@
           {
             nix-homebrew = {
               enable = true;
+              autoMigrate = true;
               user = "vaughan";
             };
           }

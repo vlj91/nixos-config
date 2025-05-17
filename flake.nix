@@ -9,7 +9,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs =
@@ -20,7 +19,6 @@
       nix-homebrew,
       home-manager,
       mac-app-util,
-      nix-vscode-extensions,
     }:
     let
       configuration =
@@ -175,7 +173,6 @@
           security.pam.services.sudo_local.touchIdAuth = true;
           nixpkgs.config.allowUnfree = true;
           nixpkgs.overlays = [
-            nix-vscode-extensions.overlays.default
           ];
         };
       homeconfig =
@@ -298,58 +295,6 @@
             ssh = {
               enable = true;
               extraConfig = "IdentityAgent \"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"\n";
-            };
-            vscode = {
-              enable = true;
-              profiles = {
-                default = {
-                  userSettings = {
-                    "editor" = {
-                      "fontFamily" = "MesloLGS Nerd Font Mono";
-                      "fontLigatures" = true;
-                      "fontSize" = 13;
-                      "formatOnSave" = true;
-                      "scrollBeyondLastLine" = false;
-                    };
-                    "nix" = {
-                      "enableLanguageServer" = true;
-                      "serverPath" = "nixd";
-                    };
-                    "telemetry.telemetryLevel" = "off";
-                    "terminal" = {
-                      "integrated" = {
-                        "copyOnSelection" = true;
-                        "fontLigatures.enabled" = true;
-                      };
-                    };
-                    "window.autoDetectColorScheme" = false;
-                    "workbench" = {
-                      "colorTheme" = "Tokyo Night";
-                      "startupEditor" = "none";
-                      "welcomePage.walkthroughs.openOnInstall" = false;
-                    };
-                  };
-                  keybindings = [
-                    # See https://code.visualstudio.com/docs/getstarted/keybindings#_advanced-customization
-                    {
-                      key = "shift+cmd+j";
-                      command = "workbench.action.focusActiveEditorGroup";
-                      when = "terminalFocus";
-                    }
-                  ];
-                  extensions = with pkgs.vscode-marketplace; [
-                    dnicolson.binary-plist
-                    enkia.tokyo-night
-                    golang.go
-                    hashicorp.terraform
-                    jnoortheen.nix-ide
-                    ms-azuretools.vscode-docker
-                    ms-python.python
-                    ms-vscode-remote.remote-ssh
-                    shopify.ruby-extensions-pack
-                  ];
-                };
-              };
             };
             z-lua = {
               enable = true;

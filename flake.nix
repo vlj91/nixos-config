@@ -266,6 +266,9 @@
                 source = ./config/nvim;
                 recursive = true;
               };
+              home.file."Library/Application Support/lazyvim/config.yml" = {
+                source = "./config/lazyvim-extras/config.yml";
+              };
               ".hushlogin" = {
                 text = ''null '';
                 executable = false;
